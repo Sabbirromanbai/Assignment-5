@@ -17,8 +17,9 @@ export function YourStack({
       <h3 className="text-lg font-bold text-slate-900">Your Stack</h3>
 
       <p className="mt-1 text-xs text-slate-400">
-        {selectedItems.length > 0 ? selectedItems.length : ""} No Technology
-        Selected yet
+        {selectedItems.length > 0
+          ? `${selectedItems.length} Technology Selected`
+          : "No Technology Selected Yet"}
       </p>
 
       {/* Selected Items */}
