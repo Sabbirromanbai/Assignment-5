@@ -17,14 +17,15 @@ export function YourStack({
       <h3 className="text-lg font-bold text-slate-900">Your Stack</h3>
 
       <p className="mt-1 text-xs text-slate-400">
-        {selectedItems.length} Technology Selected
+        {selectedItems.length > 0 ? selectedItems.length : ""} No Technology
+        Selected yet
       </p>
 
       {/* Selected Items */}
       <div className="mt-4 space-y-3">
         {selectedItems.length === 0 ? (
-          <p className="py-6 text-center text-xs text-slate-400">
-            No technology added yet.
+          <p className=" border-[2px-dot] py-6 text-center text-xs text-slate-400">
+            Your stack is empty.
           </p>
         ) : (
           selectedItems.map((item) => (
