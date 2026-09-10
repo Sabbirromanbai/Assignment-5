@@ -142,7 +142,7 @@ export function Skill({
                   onClick={() => addToStack(T)}
                   className="mt-4 w-full cursor-pointer rounded-xl bg-slate-900 py-3 text-xs font-semibold text-white transition-colors hover:bg-slate-800"
                 >
-                  Add to Stack
+                 Add to Stack
                 </button>
               </div>
             </div>

@@ -37,7 +37,7 @@
         "badge": "SSR / Edge",
         "category": "Frontend",
         "level": "Intermediate",
-        "rating": 4.9
+        "rating": 4.6
     },
     {
         "id": "nodejs",
@@ -105,7 +105,7 @@
         "description": "A utility-first CSS framework packed with classes that can be composed to build custom UI.",
         "icon": "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg",
         "badge": "Modern",
-        "category": "Styling",
+        "category": "Styling ",
         "level": "Beginner-Friendly",
         "rating": 4.9
     },
