@@ -14,20 +14,22 @@ export function YourStack({
   return (
     <div className="w-full rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
       {/* Header */}
+      
       <div className="flex items-center justify-between border-b border-slate-100 pb-4">
         <h3 className="text-lg font-bold text-slate-900">Your Stack</h3>
         <span className="rounded-full bg-pink-50 px-3 py-1 text-xs font-semibold text-pink-600">
-          {selectedItems.length} {selectedItems.length === 1 ? "Selected" : "Selected"}
+          {selectedItems.length} Selected
         </span>
       </div>
 
-      {/* Stack Items */}
+      {/* Stack Items / Empty State */}
+
       <div className="mt-4 space-y-3">
         {selectedItems.length === 0 ? (
-          <div className="py-10 text-center">
-            <p className="text-sm font-medium text-slate-500">Your stack is empty</p>
-            <p className="mt-1 text-xs text-slate-400">
-              Click "Add to Stack" on any technology card to get started.
+
+          <div className="flex flex-col items-center justify-center rounded-xl border-2 border-dashed border-slate-200 bg-slate-50/50 py-10 px-4 text-center">
+            <p className="text-sm font-semibold text-slate-500">
+              Your stack is empty
             </p>
           </div>
         ) : (
@@ -43,12 +45,17 @@ export function YourStack({
                   className="h-7 w-7 object-contain"
                 />
                 <div>
-                  <h4 className="text-sm font-bold text-slate-800">{item.name}</h4>
-                  <span className="text-[10px] font-medium text-slate-400">{item.category}</span>
+                  <h4 className="text-sm font-bold text-slate-800">
+                    {item.name}
+                  </h4>
+                  <span className="text-[10px] font-medium text-slate-400">
+                    {item.category}
+                  </span>
                 </div>
               </div>
 
               {/* Single Item Remove Button */}
+
               <button
                 type="button"
                 onClick={() => onRemove(item.id)}
@@ -63,6 +70,7 @@ export function YourStack({
       </div>
 
       {/* Remove All Button */}
+
       {selectedItems.length > 0 && (
         <button
           type="button"

@@ -6,11 +6,11 @@ export function Banner() {
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
           
-          {/* Left Text Content */}
+          {/* Text */}
           <div className="max-w-2xl space-y-6 lg:col-span-7">
             <h1 className="text-4xl font-extrabold leading-tight text-slate-900 sm:text-5xl lg:text-6xl">
               Build Your Ideal <br />
-              <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-violet-600 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-orange-500 via-pink-500 to-violet-600 bg-clip-text text-transparent">
                 Development Stack
               </span>
             </h1>
@@ -19,11 +19,12 @@ export function Banner() {
               Explore frontend, backend, database, and tooling options, compare them side by side, and put together the stack that fits your next project.
             </p>
 
-            {/* Action Buttons */}
+            {/* Buttons */}
+
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <a
                 href="#technologies"
-                className="rounded-xl bg-gradient-to-r from-orange-500 via-pink-500 to-violet-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-pink-500/20 hover:opacity-90 transition-all cursor-pointer"
+                className="rounded-xl bg-linear-to-r from-orange-500 via-pink-500 to-violet-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-pink-500/20 hover:opacity-90 transition-all cursor-pointer"
               >
                 Explore Technologies
               </a>
@@ -37,7 +38,8 @@ export function Banner() {
             </div>
           </div>
 
-          {/* Right Image */}
+          {/* Image */}
+
           <div className="flex justify-center lg:col-span-5 lg:justify-end">
             <div className="relative w-full max-w-md lg:max-w-none">
               <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-r from-orange-500/20 via-pink-500/20 to-violet-600/20 blur-2xl"></div>

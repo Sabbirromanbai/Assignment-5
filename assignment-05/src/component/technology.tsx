@@ -24,7 +24,7 @@ export function Skill({
       <div className="mb-8">
         <h2 className="text-3xl font-extrabold text-slate-900">
           Explore the{" "}
-          <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-violet-600 bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-orange-500 via-pink-500 to-violet-600 bg-clip-text text-transparent">
             Technologies
           </span>
         </h2>
@@ -44,6 +44,7 @@ export function Skill({
         <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-12">
           
           {/* Card Grid */}
+
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-8 lg:grid-cols-3">
             {technologies.map((tech) => {
               const isAdded = selectedItems.some((item) => item.id === tech.id);
@@ -57,6 +58,7 @@ export function Skill({
                 >
                   <div>
                     {/* Icon & Badge */}
+
                     <div className="flex items-start justify-between">
                       <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-50 p-2">
                         <img
@@ -73,7 +75,7 @@ export function Skill({
                       )}
                     </div>
 
-                    {/* Title & Description (FIXED: Full text is now visible) */}
+                    {/* Title & Description */}
                     <h3 className="mt-3 text-base font-bold text-slate-900">
                       {tech.name}
                     </h3>
@@ -84,6 +86,7 @@ export function Skill({
                   </div>
 
                   {/* Card Bottom: Category, Difficulty & Rating */}
+
                   <div className="mt-5">
                     <div className="flex items-center justify-between text-[11px] text-slate-500">
                       <span>{tech.category}</span>
@@ -95,13 +98,14 @@ export function Skill({
                     </div>
 
                     {/* Add to Stack Button */}
+
                     <button
                       type="button"
                       onClick={() => onAddToStack(tech)}
                       disabled={isAdded}
                       className={`mt-3 w-full rounded-xl py-2 text-xs font-semibold transition-all ${
                         isAdded
-                          ? "cursor-not-allowed bg-emerald-50 text-emerald-600 border border-emerald-200"
+                          ? "cursor-not-allowed bg-emerald-50 text-red-600 border border-emerald-200"
                           : "cursor-pointer bg-slate-900 text-white hover:bg-slate-800"
                       }`}
                     >
@@ -114,6 +118,7 @@ export function Skill({
           </div>
 
           {/* Right Sidebar: Your Stack */}
+
           <div className="w-full lg:col-span-4">
             <div className="sticky top-20">
               <YourStack

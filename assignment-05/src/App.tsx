@@ -13,7 +13,8 @@ function App() {
   const [selectedItems, setSelectedItems] = useState<ITechnology[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
-  // Fetch JSON Data with useEffect
+  // Fetch Data 
+
   useEffect(() => {
     fetch("/data.json")
       .then((res) => res.json())
@@ -28,6 +29,7 @@ function App() {
   }, []);
 
   // Add Item to Stack
+
   const handleAddToStack = (tech: ITechnology) => {
     const exists = selectedItems.some((item) => item.id === tech.id);
 
@@ -51,6 +53,7 @@ function App() {
   };
 
   // Remove Single Item
+
   const handleRemoveFromStack = (id: string) => {
     const itemToRemove = selectedItems.find((item) => item.id === id);
     setSelectedItems((prev) => prev.filter((item) => item.id !== id));
@@ -66,6 +69,7 @@ function App() {
   };
 
   // Remove All Items
+  
   const handleRemoveAll = () => {
     setSelectedItems([]);
     toast.error("🧹 All technologies removed from stack!", {

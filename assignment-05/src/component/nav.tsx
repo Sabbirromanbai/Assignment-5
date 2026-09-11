@@ -6,7 +6,8 @@ export function Nav() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex h-16 items-center justify-between">
           
-          {/* Mobile Hamburger (Left - only on mobile) */}
+          {/* Mobile Hamburger*/}
+
           <div className="flex items-center md:hidden">
             <button
               type="button"
@@ -17,12 +18,13 @@ export function Nav() {
             </button>
           </div>
 
-          {/* Logo (Desktop: Left | Mobile: Center) */}
+          {/* Logo Desktop */}
+
           <div className="flex items-center gap-2">
             <img src={logo} alt="DevStack Logo" className="h-8 w-auto md:h-9" />
           </div>
 
-          {/* Desktop Menu Links (Center - hidden on mobile) */}
+          {/* Desktop Menu Links */}
           <div className="hidden items-center gap-8 md:flex">
             <a href="#home" className="text-sm font-semibold text-pink-600">
               Home
@@ -41,7 +43,8 @@ export function Nav() {
             </a>
           </div>
 
-          {/* Both Buttons on Right (Sign In & Sign Up) */}
+          {/*Buttons*/}
+          
           <div className="flex items-center gap-2 sm:gap-3">
             <button
               type="button"
@@ -51,7 +54,7 @@ export function Nav() {
             </button>
             <button
               type="button"
-              className="cursor-pointer rounded-xl bg-gradient-to-r from-orange-500 via-pink-500 to-violet-600 px-3 py-1.5 text-xs font-semibold text-white shadow-md transition-all hover:opacity-90 sm:px-4 sm:py-2 sm:text-sm"
+              className="cursor-pointer rounded-xl bg-linear-to-r from-orange-500 via-pink-500 to-violet-600 px-3 py-1.5 text-xs font-semibold text-white shadow-md transition-all hover:opacity-90 sm:px-4 sm:py-2 sm:text-sm"
             >
               Sign Up
             </button>
