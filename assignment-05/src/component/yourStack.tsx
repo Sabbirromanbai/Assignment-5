@@ -12,52 +12,48 @@ export function YourStack({
   onRemoveAll,
 }: IYourStackProps) {
   return (
-    <div className="w-full rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
+    <div className="w-full rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
       {/* Header */}
-      <h3 className="text-lg font-bold text-slate-900">
-        Your Stack
-      </h3>
+      <div className="flex items-center justify-between border-b border-slate-100 pb-4">
+        <h3 className="text-lg font-bold text-slate-900">Your Stack</h3>
+        <span className="rounded-full bg-pink-50 px-3 py-1 text-xs font-semibold text-pink-600">
+          {selectedItems.length} {selectedItems.length === 1 ? "Selected" : "Selected"}
+        </span>
+      </div>
 
-      <p className="mt-1 text-xs text-slate-400">
-        {selectedItems.length > 0
-          ? `${selectedItems.length} ${
-              selectedItems.length === 1
-                ? "Technology"
-                : "Technologies"
-            } Selected`
-          : "No technologies selected yet."}
-      </p>
-
-      {/* Selected Items */}
+      {/* Stack Items */}
       <div className="mt-4 space-y-3">
         {selectedItems.length === 0 ? (
-          <p className="py-6 text-center text-xs text-slate-400">
-            No item selected yet
-          </p>
+          <div className="py-10 text-center">
+            <p className="text-sm font-medium text-slate-500">Your stack is empty</p>
+            <p className="mt-1 text-xs text-slate-400">
+              Click "Add to Stack" on any technology card to get started.
+            </p>
+          </div>
         ) : (
           selectedItems.map((item) => (
             <div
               key={item.id}
-              className="flex items-center justify-between rounded-xl border border-slate-100 p-3"
+              className="flex items-center justify-between rounded-xl border border-slate-100 bg-slate-50/50 p-3 transition-all hover:border-slate-200"
             >
-              {/* Technology Info */}
               <div className="flex items-center gap-3">
                 <img
                   src={item.icon}
-                  alt={item.title}
-                  className="h-6 w-6 object-contain"
+                  alt={item.name}
+                  className="h-7 w-7 object-contain"
                 />
-
-                <span className="text-sm font-semibold text-slate-800">
-                  {item.title}
-                </span>
+                <div>
+                  <h4 className="text-sm font-bold text-slate-800">{item.name}</h4>
+                  <span className="text-[10px] font-medium text-slate-400">{item.category}</span>
+                </div>
               </div>
 
-              {/* Remove Button */}
+              {/* Single Item Remove Button */}
               <button
                 type="button"
                 onClick={() => onRemove(item.id)}
-                className="cursor-pointer text-slate-400 transition-colors hover:text-slate-600"
+                className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-lg text-slate-400 hover:bg-rose-50 hover:text-rose-500 transition-colors"
+                title="Remove item"
               >
                 ✕
               </button>
@@ -66,12 +62,12 @@ export function YourStack({
         )}
       </div>
 
-      {/* Remove All */}
+      {/* Remove All Button */}
       {selectedItems.length > 0 && (
         <button
           type="button"
           onClick={onRemoveAll}
-          className="mt-6 w-full cursor-pointer rounded-xl border border-rose-200 py-2.5 text-xs font-medium text-rose-500 transition-colors hover:bg-rose-50"
+          className="mt-6 w-full cursor-pointer rounded-xl border border-rose-200 bg-rose-50/30 py-2.5 text-xs font-semibold text-rose-600 transition-all hover:bg-rose-50 hover:border-rose-300"
         >
           Remove All
         </button>
