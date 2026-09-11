@@ -23,7 +23,7 @@ export function Skill({
 
     setSelectedItems((items) => [...items, technology]);
 
-    toast.success("🦄 Added to stack!", {
+    toast.success("Stack added Successfully✅", {
       position: "bottom-right",
       autoClose: 5000,
       hideProgressBar: false,
