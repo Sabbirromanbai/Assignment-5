@@ -14,19 +14,25 @@ export function YourStack({
   return (
     <div className="w-full rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
       {/* Header */}
-      <h3 className="text-lg font-bold text-slate-900">Your Stack</h3>
+      <h3 className="text-lg font-bold text-slate-900">
+        Your Stack
+      </h3>
 
       <p className="mt-1 text-xs text-slate-400">
         {selectedItems.length > 0
-          ? `${selectedItems.length} Technology Selected`
-          : "No Technology Selected Yet"}
+          ? `${selectedItems.length} ${
+              selectedItems.length === 1
+                ? "Technology"
+                : "Technologies"
+            } Selected`
+          : "No technologies selected yet."}
       </p>
 
       {/* Selected Items */}
       <div className="mt-4 space-y-3">
         {selectedItems.length === 0 ? (
-          <p className=" border-[2px-dot] py-6 text-center text-xs text-slate-400">
-            Your stack is empty.
+          <p className="py-6 text-center text-xs text-slate-400">
+            No item selected yet
           </p>
         ) : (
           selectedItems.map((item) => (
@@ -60,7 +66,7 @@ export function YourStack({
         )}
       </div>
 
-      {/* Remove All Button */}
+      {/* Remove All */}
       {selectedItems.length > 0 && (
         <button
           type="button"

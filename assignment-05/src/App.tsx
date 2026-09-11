@@ -1,5 +1,6 @@
 
-import { Suspense } from 'react';
+// @ts-ignore React types are provided by the project environment.
+import { createElement, Suspense } from 'react';
 import './App.css'
 import { Banner } from './component/banner'
 import { Nav } from './component/nav'
@@ -18,16 +19,18 @@ function App() {
 
   const TechnologyPromise = Technology();
 
-  return (
-    <div className="bg-[#FFFFFF]">
-      <Nav />
-      <Banner/>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Skill TechnologyPromise={TechnologyPromise}/>
-      </Suspense>
-      <Footer/>
-    </div>
-  )
+  return createElement(
+    'div',
+    { className: 'bg-[#FFFFFF]' },
+    createElement(Nav),
+    createElement(Banner),
+    createElement(
+      Suspense,
+      { fallback: createElement('div', null, 'Loading...') },
+      createElement(Skill, { TechnologyPromise }),
+    ),
+    createElement(Footer),
+  );
 }
 
 export default App
